@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1003607003409",
+    "project_id": "auth-1677239003367",
+    "storage_bucket": "auth-1677239003367.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1003607003409:android:47a2756524b1cb8e21bcb0",
+        "android_client_info": {
+          "package_name": "com.minbal_rn_auth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1003607003409-2nkm0vj814jq3lri8sg6b9h140bfabs8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.minbal_rn_auth",
+            "certificate_hash": "91c8cb2cdf3e6fe47a9ea5ecbcb4bec7b95e50cf"
+          }
+        },
+        {
+          "client_id": "1003607003409-b4d2vnkdmfr1p4ori54oge3etbbeitjn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.minbal_rn_auth",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "1003607003409-at5atdbdtbugksfosk6atp57lghhn06i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdlTU0Qlc1PR_mzkmT8BxOf6ljC_rlP2U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1003607003409-at5atdbdtbugksfosk6atp57lghhn06i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
