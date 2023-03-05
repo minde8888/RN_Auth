@@ -3,8 +3,8 @@ import { store } from "../../redux/store";
 import { userLogout } from "../../redux/slice/authSlice";
 import api from "../apiServices/instanceApi";
 import { ServerError } from "../typings";
-// import AuthError from "../handleServerErrorServices/authError";
-// import RegisterError from "../handleServerErrorServices/registerError";
+import AuthError from "../handleServerErrorServices/authError";
+import RegisterError from "../handleServerErrorServices/registerError";
 
 const AUTH_URL = "Auth/";
 
@@ -37,16 +37,16 @@ export const login = async (
     });
 
     if (!(Object.keys(data).length !== 0)) {
-      throw Error("no user found");
+      throw new AuthError("no user found");
     }
     return { ...data, errors: data.errors ? data.errors[0] : "" };
   } catch (error: any) {
     if (axios.isAxiosError(error)) {
       const serverError = error as AxiosError<ServerError>;
       if (serverError && serverError.response?.data) {
-        throw new Error(serverError.response.data.errors.$values[0]);
+        throw new AuthError(serverError.response.data.errors.$values[0]);
       }
-      throw new Error(error.message);
+      throw new AuthError(error.message);
     }
     throw error;
   }
@@ -77,9 +77,9 @@ export const register = async (
     if (axios.isAxiosError(error)) {
       const serverError = error as AxiosError<ServerError>;
       if (serverError && serverError.response) {
-        throw new Error(serverError.response.data.errors.$values[0]);
+        throw new AuthError(serverError.response.data.errors.$values[0]);
       }
-      throw new Error(error.message);
+      throw new AuthError(error.message);
     }
     throw error;
   }

@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import Routes from './src/routes/Routes'
 import 'react-native-gesture-handler';
 
-export default function App() {
+export const App = () => {
   return (
     <Provider store={store}>
       <AuthProvider>
@@ -13,3 +13,5 @@ export default function App() {
     </Provider>
   );
 }
+
+export default App;

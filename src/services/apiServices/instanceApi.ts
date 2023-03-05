@@ -15,7 +15,7 @@ interface Response {
 }
 
 const api = axios.create({    
-  baseURL: "https://localhost:9002/api/v1/",
+  baseURL: "https://0.0.0.0:9002/api/v1/",
 });
 
 interface AxiosRequestConfig<T = any> {
