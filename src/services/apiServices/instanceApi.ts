@@ -7,6 +7,7 @@ import {
   userLogout,
 } from "../../redux/slice/authSlice";
 import createAuthRefreshInterceptor from "axios-auth-refresh";
+import { Platform } from 'react-native';
 
 interface Response {
   token: string;
@@ -14,8 +15,13 @@ interface Response {
   susses:boolean;
 }
 
+const androidUrl = "https://192.168.0.182:9002/api/v1/";
+const iosUrl = "https://localhost:9002/swagger/index.html";
+
+const url = Platform.OS === 'ios' ? iosUrl : androidUrl;
+
 const api = axios.create({    
-  baseURL: "https://0.0.0.0:9002/api/v1/",
+  baseURL: url,
 });
 
 interface AxiosRequestConfig<T = any> {
@@ -30,6 +36,9 @@ api.interceptors.request.use(
       ...authHeader(),
     } as AxiosRequestHeaders;
     config.headers = newHeader;
+    console.log('====================================');
+    console.log(config);
+    console.log('====================================');
     return config;
   },
   (error) => {
